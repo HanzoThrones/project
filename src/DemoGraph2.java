@@ -24,6 +24,23 @@ public class DemoGraph2 {
         vertices[7] = new LandTile("White Harbor", 8, "None");
         vertices[8] = new PortTile("White Harbor Port", 9, "None");
         vertices[9] = new LandTile("Widow's Watch", 10, "None");
+        vertices[10] = new SeaTile("The Shivering Sea", 11, "None");
+        vertices[11] = new LandTile("Flint's Finger", 12, "None");
+        vertices[12] = new LandTile("Greywater Watch", 13, "None");
+        vertices[13] = new LandTile("Moat Calin", 14, "None");
+        vertices[14] = new SeaTile("The Narrow Sea", 15, "None");
+        vertices[15] = new SeaTile("Ironman's Bay", 16, "None");
+        vertices[16] = new LandTile("Pyke", 17, "Greyjoy");
+        vertices[17] = new PortTile("Pyke Port", 18, "Greyjoy");
+        vertices[18] = new LandTile("Seagard", 19, "None");
+        vertices[19] = new LandTile("The Twins", 20, "None");
+        vertices[20] = new LandTile("The Fingers", 21, "None");
+        vertices[21] = new LandTile("Riverrun", 22, "None");
+        vertices[22] = new LandTile("The Mountains of The Moon", 23, "None");
+        vertices[23] = new LandTile("The Eyrie", 24, "None");
+        vertices[24] = new SeaTile("The Golden Sound", 25, "None");
+        vertices[25] = new LandTile("Lannisport", 26, "None");
+        vertices[26] = new PortTile("Lannisport Port", 27, "None");
         
         for(int i = 0; i < SIZE; i++){
             graph.addVertex(vertices[i], true);
@@ -46,7 +63,7 @@ public class DemoGraph2 {
         
         graph.addEdge(vertices[3], vertices[4]);
         graph.addEdge(vertices[3], vertices[6]);
-        //graph.addEdge(vertices[3], vertices[]);
+        graph.addEdge(vertices[3], vertices[7]);
         
         
         
