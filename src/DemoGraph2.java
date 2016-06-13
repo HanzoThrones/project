@@ -9,7 +9,7 @@ public class DemoGraph2 {
         
         Graph graph = new Graph();
         
-        final int SIZE = 58;
+        final int SIZE = 59;
         
         //initialize some vertices and add them to the graph
         Vertex[] vertices = new Vertex[SIZE];       
@@ -69,10 +69,10 @@ public class DemoGraph2 {
         vertices[52] = new LandTile("The Arbor", 53, "None");
         vertices[53] = new LandTile("Starfall", 54, "None");
         vertices[54] = new LandTile("Yronwood", 55, "None");
-        vertices[55] = new LandTile("Sunspear", 55, "Dorne");
-        vertices[56] = new PortTile("Sunspear Port", 56, "Dorne");
-        vertices[56] = new LandTile("Salt Shore", 57, "None");
-        vertices[57] = new SeaTile("East Summer Sea", 58, "None");
+        vertices[55] = new LandTile("Sunspear", 56, "Dorne");
+        vertices[56] = new PortTile("Sunspear Port", 57, "Dorne");
+        vertices[57] = new LandTile("Salt Shore", 58, "None");
+        vertices[58] = new SeaTile("East Summer Sea", 59, "None");
         
         
         for(int i = 0; i < SIZE; i++){
@@ -98,10 +98,10 @@ public class DemoGraph2 {
         graph.addEdge(vertices[3], vertices[6]);
         graph.addEdge(vertices[3], vertices[7]);
         
-        
-        
+        Vertex vertice;
         //display the initial setup- all vertices adjacent to each other
-        for (Vertex vertice : vertices) {
+        for (int i = 1; i < SIZE + 1; i++) {
+            vertice = graph.getVertex(i);
             System.out.println(vertice);
             for (int j = 0; j < vertice.getNeighborCount(); j++) {
                 System.out.println(vertice.getNeighbor(j));

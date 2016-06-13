@@ -49,7 +49,7 @@ public class DemoGraph {
         }
         
         
-        System.out.println("Vertex 5: " + graph.getVertex("5")); //null
+       /* System.out.println("Vertex 5: " + graph.getVertex("5")); //null
         System.out.println("Vertex 3: " + graph.getVertex("3")); //Vertex 3
         
         //true
@@ -68,7 +68,7 @@ public class DemoGraph {
         System.out.println(graph.containsVertex(new Vertex("1", 1))); //true
         System.out.println(graph.containsVertex(new Vertex("6", 6))); //false
         System.out.println(graph.removeVertex("2")); //Vertex 2
-        System.out.println(graph.vertexKeys()); //[3, 1, 0, 4]
+        System.out.println(graph.vertexKeys()); //[3, 1, 0, 4]*/
         
     }
 }

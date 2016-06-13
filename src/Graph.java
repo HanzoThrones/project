@@ -14,11 +14,11 @@ import java.util.*;
  */
 public class Graph {
     
-    private HashMap<String, Vertex> vertices;
+    private HashMap<Integer, Vertex> vertices;
     private HashMap<Integer, Edge> edges;
     
     public Graph(){
-        this.vertices = new HashMap<String, Vertex>();
+        this.vertices = new HashMap<Integer, Vertex>();
         this.edges = new HashMap<Integer, Edge>();
     }
     
@@ -30,11 +30,11 @@ public class Graph {
      * @param vertices The initial Vertices to populate this Graph
      */
     public Graph(ArrayList<Vertex> vertices){
-        this.vertices = new HashMap<String, Vertex>();
+        this.vertices = new HashMap<Integer, Vertex>();
         this.edges = new HashMap<Integer, Edge>();
         
         for(Vertex v: vertices){
-            this.vertices.put(v.getLabel(), v);
+            this.vertices.put(v.getIndex(), v);
         }
         
     }
@@ -126,8 +126,8 @@ public class Graph {
      * @param label The specified Vertex label
      * @return Vertex The Vertex with the specified label
      */
-    public Vertex getVertex(String label){
-        return vertices.get(label);
+    public Vertex getVertex(Integer index){
+        return vertices.get(index);
     }
     
     /**
@@ -153,7 +153,7 @@ public class Graph {
         }
         
         
-        vertices.put(vertex.getLabel(), vertex);
+        vertices.put(vertex.getIndex(), vertex);
         return true;
     }
     
@@ -176,7 +176,7 @@ public class Graph {
      * 
      * @return Set<String> The unique labels of the Graph's Vertex objects
      */
-    public Set<String> vertexKeys(){
+    public Set<Integer> vertexKeys(){
         return this.vertices.keySet();
     }
     
