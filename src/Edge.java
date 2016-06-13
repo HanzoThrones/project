@@ -36,7 +36,7 @@ public class Edge implements Comparable<Edge> {
      * @param weight The weight of this Edge
      */
     public Edge(Vertex one, Vertex two, int weight){
-        this.one = (one.getLabel().compareTo(two.getLabel()) <= 0) ? one : two;
+        this.one = (one.getLabel().compareTo(two.getLabel()) <= 0) ? one : two; //keeps a sort? Not sure this is preferable
         this.two = (this.one == one) ? two : one;
         this.weight = weight;
     }
@@ -134,5 +134,6 @@ public class Edge implements Comparable<Edge> {
         Edge e = (Edge)other;
         
         return e.one.equals(this.one) && e.two.equals(this.two);
-    }   
+    }
+   
 }

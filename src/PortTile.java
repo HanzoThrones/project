@@ -16,7 +16,7 @@ public class PortTile extends TileVertex{
 
     @Override
     public boolean equalsType(Vertex other) {
-        return other instanceof LandTile;
+        return other instanceof PortTile;
     }
     
     @Override
