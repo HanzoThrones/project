@@ -14,12 +14,12 @@ import java.util.*;
  */
 public class Graph {
     
-    private HashMap<Integer, Vertex> vertices;
-    private HashMap<Integer, Edge> edges;
+    private HashMap<Integer, TileVertex> vertices;
+    private HashMap<Integer, MapEdge> edges;
     
     public Graph(){
-        this.vertices = new HashMap<Integer, Vertex>();
-        this.edges = new HashMap<Integer, Edge>();
+        this.vertices = new HashMap<>();
+        this.edges = new HashMap<>();
     }
     
     /**
@@ -29,11 +29,11 @@ public class Graph {
      * 
      * @param vertices The initial Vertices to populate this Graph
      */
-    public Graph(ArrayList<Vertex> vertices){
-        this.vertices = new HashMap<Integer, Vertex>();
-        this.edges = new HashMap<Integer, Edge>();
+    public Graph(ArrayList<TileVertex> vertices){
+        this.vertices = new HashMap<>();
+        this.edges = new HashMap<>();
         
-        for(Vertex v: vertices){
+        for(TileVertex v: vertices){
             this.vertices.put(v.getIndex(), v);
         }
         
@@ -46,30 +46,45 @@ public class Graph {
      * 
      * @param one The first vertex to add
      * @param two The second vertex to add
-     * @return true iff no Edge relating one and two exists in the Graph
+     * @return true if no Edge relating one and two exists in the Graph
      */
-    public boolean addEdge(Vertex one, Vertex two){
+    public boolean addEdge(TileVertex one, TileVertex two){
         return addEdge(one, two, 1);
     }
     
     
     /**
      * Accepts two vertices and a weight, and adds the edge 
-     * ({one, two}, weight) iff no Edge relating one and two 
+     * ({one, two}, weight) if no Edge relating one and two 
      * exists in the Graph.
      * 
      * @param one The first Vertex of the Edge
      * @param two The second Vertex of the Edge
      * @param weight The weight of the Edge
-     * @return true iff no Edge already exists in the Graph
+     * @return true if no Edge already exists in the Graph
      */
-    public boolean addEdge(Vertex one, Vertex two, int weight){
+    public boolean addEdge(TileVertex one, TileVertex two, int weight){
         if(one.equals(two)){
             return false;   
-        }
-       
+        }       
+
+        
+        //Edge e = new Edge(one, two, weight);
+        MapEdge e;
+        
+        switch(weight){
+            case 1: e = new RoadEdge(one, two, weight);
+            break;
+            case 2: e = new RiverEdge(one, two, weight);
+            break;
+            case 3: e = new SeaEdge(one, two, weight);
+            break;
+            case 4: e = new ShoreEdge(one, two, weight);
+            break;
+            default: e = new RoadEdge(one, two, 1);
+        }     
+        
         //ensures the Edge is not in the Graph
-        Edge e = new Edge(one, two, weight);
         if(edges.containsKey(e.hashCode())){
             return false;
         }
@@ -88,9 +103,9 @@ public class Graph {
     /**
      * 
      * @param e The Edge to look up
-     * @return true iff this Graph contains the Edge e
+     * @return true if this Graph contains the Edge e
      */
-    public boolean containsEdge(Edge e){
+    public boolean containsEdge(MapEdge e){
         if(e.getOne() == null || e.getTwo() == null){
             return false;
         }
@@ -101,12 +116,12 @@ public class Graph {
     
     /**
      * This method removes the specified Edge from the Graph,
-     * including as each vertex's incidence neighborhood.
+     * including as each Vertex's incidence neighborhood.
      * 
      * @param e The Edge to remove from the Graph
      * @return Edge The Edge removed from the Graph
      */
-    public Edge removeEdge(Edge e){
+    public MapEdge removeEdge(MapEdge e){
        e.getOne().removeNeighbor(e);
        e.getTwo().removeNeighbor(e);
        return this.edges.remove(e.hashCode());
@@ -115,18 +130,18 @@ public class Graph {
     /**
      * 
      * @param vertex The Vertex to look up
-     * @return true iff this Graph contains vertex
+     * @return true if this Graph contains vertex
      */
-    public boolean containsVertex(Vertex vertex){
-        return this.vertices.get(vertex.getLabel()) != null;
+    public boolean containsVertex(TileVertex vertex){
+        return this.vertices.get(vertex.getIndex()) != null;
     }
     
     /**
      * 
-     * @param label The specified Vertex label
+     * @param index The specified Vertex label
      * @return Vertex The Vertex with the specified label
      */
-    public Vertex getVertex(Integer index){
+    public TileVertex getVertex(Integer index){
         return vertices.get(index);
     }
     
@@ -138,10 +153,10 @@ public class Graph {
      * 
      * @param vertex
      * @param overwriteExisting
-     * @return true iff vertex was added to the Graph
+     * @return true if vertex was added to the Graph
      */
-    public boolean addVertex(Vertex vertex, boolean overwriteExisting){
-        Vertex current = this.vertices.get(vertex.getLabel());
+    public boolean addVertex(TileVertex vertex, boolean overwriteExisting){
+        TileVertex current = this.vertices.get(vertex.getIndex());
         if(current != null){
             if(!overwriteExisting){
                 return false;
@@ -159,11 +174,11 @@ public class Graph {
     
     /**
      * 
-     * @param label The label of the Vertex to remove
+     * @param index The index of the Vertex to remove
      * @return Vertex The removed Vertex object
      */
-    public Vertex removeVertex(String label){
-        Vertex v = vertices.remove(label);
+    public TileVertex removeVertex(Integer index){
+        TileVertex v = vertices.remove(index);
         
         while(v.getNeighborCount() > 0){
             this.removeEdge(v.getNeighbor((0)));
@@ -174,7 +189,7 @@ public class Graph {
     
     /**
      * 
-     * @return Set<String> The unique labels of the Graph's Vertex objects
+     * @return Set<Integer> The unique labels of the Graph's Vertex objects
      */
     public Set<Integer> vertexKeys(){
         return this.vertices.keySet();
@@ -182,10 +197,10 @@ public class Graph {
     
     /**
      * 
-     * @return Set<Edge> The Edges of this graph
+     * @return Set<MapEdge> The Edges of this graph
      */
-    public Set<Edge> getEdges(){
-        return new HashSet<Edge>(this.edges.values());
+    public Set<MapEdge> getEdges(){
+        return new HashSet<>(this.edges.values());
     }
     
 }

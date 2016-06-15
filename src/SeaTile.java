@@ -15,7 +15,7 @@ public class SeaTile extends TileVertex{
     }
 
     @Override
-    public boolean equalsType(Vertex other){
+    public boolean equalsType(TileVertex other){
         return other instanceof SeaTile;
     }
     

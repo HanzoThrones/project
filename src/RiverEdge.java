@@ -9,26 +9,28 @@
  * @author taylo
  */
 public class RiverEdge extends MapEdge{
-    private boolean blockaded;
+    private boolean hasBridge;
     
-    public RiverEdge(Vertex one, Vertex two){
+    public RiverEdge(TileVertex one, TileVertex two){
         super(one, two, 1);
+        this.hasBridge = false;
     }
     
-    public RiverEdge(Vertex one, Vertex two, int weight){
+    public RiverEdge(TileVertex one, TileVertex two, int weight){
         super(one, two, weight);
+        this.hasBridge = (weight == 2);        
     }
     
-    public void setBlockaded(boolean blockaded){
-        this.blockaded = blockaded;
+    public void setBridge(boolean hasBridge){
+        this.hasBridge = hasBridge;
     }
     
-    public boolean getBlockaded(){
-        return this.blockaded;
+    public boolean getBridge(){
+        return this.hasBridge;
     }
     
     @Override
-    public boolean equalsType(Edge other){
+    public boolean equalsType(MapEdge other){
         return other instanceof RiverEdge;
     }
 }

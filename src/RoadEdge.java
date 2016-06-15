@@ -12,12 +12,12 @@ public class RoadEdge extends MapEdge{
     
     private boolean blocked;
     
-    public RoadEdge(Vertex one, Vertex two){
+    public RoadEdge(TileVertex one, TileVertex two){
         super(one, two, 1);
         this.blocked = false;
     }
     
-    public RoadEdge(Vertex one, Vertex two, int weight){
+    public RoadEdge(TileVertex one, TileVertex two, int weight){
         super(one, two, weight);
         this.blocked = false;
     }
@@ -31,7 +31,7 @@ public class RoadEdge extends MapEdge{
     }
     
     @Override
-    public boolean equalsType(Edge other){
+    public boolean equalsType(MapEdge other){
         return other instanceof RoadEdge;
     }
 }

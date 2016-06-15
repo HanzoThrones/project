@@ -96,6 +96,10 @@ public class Vertex {
         return this.label;
     }
     
+     /**
+     * 
+     * @return int The index of this Vertex
+     */
     public int getIndex(){
         return this.index;
     }

@@ -10,9 +10,9 @@ public class DemoGraph {
         
         
         //initialize some vertices and add them to the graph
-        Vertex[] vertices = new Vertex[5];
+        TileVertex[] vertices = new TileVertex[5];
         for(int i = 0; i < vertices.length; i++){
-            vertices[i] = new Vertex("" + i, i);
+            vertices[i] = new LandTile("" + i, i, "none");
             graph.addVertex(vertices[i], true);
         }
         
@@ -37,7 +37,7 @@ public class DemoGraph {
         }
         
         //overwritte Vertex 3
-        graph.addVertex(new Vertex("3", 3), true);
+        graph.addVertex(new LandTile("3", 3, "none"), true);
         for(int i = 0; i < vertices.length; i++){
             System.out.println(vertices[i]);
             

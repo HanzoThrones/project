@@ -12,7 +12,7 @@ public class DemoGraph2 {
         final int SIZE = 59;
         
         //initialize some vertices and add them to the graph
-        Vertex[] vertices = new Vertex[SIZE];       
+        TileVertex[] vertices = new TileVertex[SIZE];       
         
         vertices[0] = new SeaTile("Bay of Ice", 1, "None");
         vertices[1] = new LandTile("Castle Black", 2, "None");
@@ -79,32 +79,32 @@ public class DemoGraph2 {
             graph.addVertex(vertices[i], true);
         }
         
-        graph.addEdge(vertices[0], vertices[1]);
-        graph.addEdge(vertices[0], vertices[3]);
-        graph.addEdge(vertices[0], vertices[4]);
-        graph.addEdge(vertices[0], vertices[6]);
+        graph.addEdge(vertices[0], vertices[1], 4);
+        graph.addEdge(vertices[0], vertices[3], 4);
+        graph.addEdge(vertices[0], vertices[4], 3);
+        graph.addEdge(vertices[0], vertices[6], 4);
         
-        graph.addEdge(vertices[1], vertices[2]);
-        graph.addEdge(vertices[1], vertices[3]);
-        graph.addEdge(vertices[1], vertices[5]);
+        graph.addEdge(vertices[1], vertices[2], 4);
+        graph.addEdge(vertices[1], vertices[3], 1);
+        graph.addEdge(vertices[1], vertices[5], 1);
         
-        graph.addEdge(vertices[2], vertices[5]);
-        graph.addEdge(vertices[2], vertices[3]);
-        graph.addEdge(vertices[2], vertices[5]);
-        graph.addEdge(vertices[2], vertices[8]);
-        graph.addEdge(vertices[2], vertices[9]);
+        graph.addEdge(vertices[2], vertices[5], 4);
+        graph.addEdge(vertices[2], vertices[3], 4);
+        graph.addEdge(vertices[2], vertices[5], 4);
+        graph.addEdge(vertices[2], vertices[8], 3);
+        graph.addEdge(vertices[2], vertices[9], 4);
         
-        graph.addEdge(vertices[3], vertices[4]);
-        graph.addEdge(vertices[3], vertices[6]);
-        graph.addEdge(vertices[3], vertices[7]);
+        graph.addEdge(vertices[3], vertices[4], 4);
+        graph.addEdge(vertices[3], vertices[6], 1);
+        graph.addEdge(vertices[3], vertices[7], 1);
         
-        Vertex vertice;
+        TileVertex vertex;
         //display the initial setup- all vertices adjacent to each other
         for (int i = 1; i < SIZE + 1; i++) {
-            vertice = graph.getVertex(i);
-            System.out.println(vertice);
-            for (int j = 0; j < vertice.getNeighborCount(); j++) {
-                System.out.println(vertice.getNeighbor(j));
+            vertex = graph.getVertex(i);
+            System.out.println(vertex);
+            for (int j = 0; j < vertex.getNeighborCount(); j++) {
+                System.out.println(vertex.getNeighbor(j));
             }
             System.out.println();
         }

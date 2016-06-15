@@ -13,7 +13,6 @@ public class LandTile extends TileVertex {
     private int building;
     private int crowns;
     private int supply;
-    //private Vertex port;
     
     public LandTile(String label, int index, String control)
     {
@@ -21,17 +20,15 @@ public class LandTile extends TileVertex {
         building = 0;
         crowns = 0;
         supply = 0;
-        //port = false;
     }
     
     public LandTile(String label, int index, String control, int building,
-                    String houseControl, int crowns, int supply)//, boolean port)
+                    String houseControl, int crowns, int supply)
     {
         super(label, index, control);
         this.building = building;
         this.crowns = crowns;
         this.supply = supply;
-        //this.port = port;
     }
     
     public void setBuilding(int building)
@@ -65,18 +62,9 @@ public class LandTile extends TileVertex {
     }
     
     @Override
-    public boolean equalsType(Vertex other){
+    public boolean equalsType(TileVertex other){
         return other instanceof LandTile;
     }
-    /*public void setPort(boolean port)
-    {
-        this.port = port;
-    }
-    
-    public boolean getPort()
-    {
-        return port;
-    }*/
     @Override
     public String toString(){
         return "Land Vertex #" + index + ": " + label;
