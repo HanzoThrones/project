@@ -18,7 +18,7 @@ public class RiverEdge extends MapEdge{
     
     public RiverEdge(TileVertex one, TileVertex two, int weight){
         super(one, two, weight);
-        this.hasBridge = false;        
+        this.hasBridge = weight == 6;        
     }
     
     public void setBridge(boolean hasBridge){

@@ -81,6 +81,8 @@ public class Graph {
             break;
             case 5: e = new PortEdge(one, two, weight);
             break;
+            case 6: e = new RiverEdge(one, two, weight);
+            break;
             default: e = new RoadEdge(one, two, 1);
         }     
         

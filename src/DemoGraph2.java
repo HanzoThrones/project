@@ -12,6 +12,7 @@ public class DemoGraph2 {
         final int SEA = 3;
         final int SHORE = 4;
         final int PORT = 5;
+        final int BRIDGE = 6;
         
         Graph graph = new Graph();
         
@@ -151,9 +152,9 @@ public class DemoGraph2 {
         
         graph.addEdge(vertices[16], vertices[17], PORT);
         
-        graph.addEdge(vertices[18], vertices[19], RIVER);
-        RiverEdge edge = (RiverEdge)(vertices[18].getNeighbor(3));
-        edge.setBridge(true);
+        graph.addEdge(vertices[18], vertices[19], BRIDGE);
+        //RiverEdge edge = (RiverEdge)(vertices[18].getNeighbor(3));
+        //edge.setBridge(true);
         graph.addEdge(vertices[18], vertices[21], ROAD);
         
         graph.addEdge(vertices[19], vertices[20], ROAD);
@@ -169,9 +170,9 @@ public class DemoGraph2 {
         
         graph.addEdge(vertices[22], vertices[23], ROAD);
         graph.addEdge(vertices[22], vertices[28], RIVER);
-        graph.addEdge(vertices[22], vertices[29], RIVER);
-        edge = (RiverEdge)(vertices[22].getNeighbor(6));
-        edge.setBridge(true);
+        graph.addEdge(vertices[22], vertices[29], BRIDGE);
+        //edge = (RiverEdge)(vertices[22].getNeighbor(6));
+        //edge.setBridge(true);
         
         graph.addEdge(vertices[24], vertices[25], SHORE);
         graph.addEdge(vertices[24], vertices[26], SEA);
