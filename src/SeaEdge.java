@@ -34,4 +34,9 @@ public class SeaEdge extends MapEdge {
     public boolean equalsType(MapEdge other){
         return other instanceof SeaEdge;
     }
+    
+    @Override
+    public String toString(){
+        return "\tSea Edge: ({" + one + ", " + two + "}, " + weight + ")";
+    }
 }

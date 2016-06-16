@@ -10,8 +10,8 @@
  */
 public abstract class MapEdge implements Comparable<MapEdge> {
     
-    private TileVertex one, two;
-    private int weight;
+    protected TileVertex one, two;
+    protected int weight;
     
     
     public MapEdge(TileVertex one, TileVertex two){

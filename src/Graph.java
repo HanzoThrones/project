@@ -35,8 +35,7 @@ public class Graph {
         
         for(TileVertex v: vertices){
             this.vertices.put(v.getIndex(), v);
-        }
-        
+        }       
     }
     
     /**
@@ -67,7 +66,6 @@ public class Graph {
         if(one.equals(two)){
             return false;   
         }       
-
         
         //Edge e = new Edge(one, two, weight);
         MapEdge e;
@@ -80,6 +78,8 @@ public class Graph {
             case 3: e = new SeaEdge(one, two, weight);
             break;
             case 4: e = new ShoreEdge(one, two, weight);
+            break;
+            case 5: e = new PortEdge(one, two, weight);
             break;
             default: e = new RoadEdge(one, two, 1);
         }     
@@ -113,7 +113,16 @@ public class Graph {
         return this.edges.containsKey(e.hashCode());
     }
     
-    
+    /*public MapEdge getEdge(TileVertex one, TileVertex two)
+    {
+        Iterator i;
+        i = edges.entrySet().iterator();
+        
+        for(;i.hasNext(); i.)
+        {
+            ;
+        }
+    }*/
     /**
      * This method removes the specified Edge from the Graph,
      * including as each Vertex's incidence neighborhood.

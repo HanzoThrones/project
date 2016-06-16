@@ -17,8 +17,8 @@
  */
 public class Edge implements Comparable<Edge> {
 
-    private Vertex one, two;
-    private int weight;
+    protected Vertex one, two;
+    protected int weight;
     
     /**
      * 

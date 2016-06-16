@@ -8,25 +8,23 @@
  *
  * @author taylo
  */
-public class ShoreEdge extends MapEdge{
-    
-   public ShoreEdge(TileVertex one, TileVertex two){
+public class PortEdge extends MapEdge {
+       
+    public PortEdge(TileVertex one, TileVertex two){
         super(one, two, 1);
     }
     
-    public ShoreEdge(TileVertex one, TileVertex two, int weight){
+    public PortEdge(TileVertex one, TileVertex two, int weight){
         super(one, two, weight);
     }
-    
+        
     @Override
     public boolean equalsType(MapEdge other){
-        return other instanceof ShoreEdge;
+        return other instanceof PortEdge;
     }
     
     @Override
     public String toString(){
-        return "\tShore Edge: ({" + one + ", " + two + "}, " + weight + ")";
+        return "\tPort Edge: ({" + one + ", " + two + "}, " + weight + ")";
     }
 }
-
-

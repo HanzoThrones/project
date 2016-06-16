@@ -18,7 +18,7 @@ public class RiverEdge extends MapEdge{
     
     public RiverEdge(TileVertex one, TileVertex two, int weight){
         super(one, two, weight);
-        this.hasBridge = (weight == 2);        
+        this.hasBridge = false;        
     }
     
     public void setBridge(boolean hasBridge){
@@ -32,5 +32,11 @@ public class RiverEdge extends MapEdge{
     @Override
     public boolean equalsType(MapEdge other){
         return other instanceof RiverEdge;
+    }
+    
+    @Override
+    public String toString(){
+        return "\tRiver Edge " + (hasBridge? "with bridge":"") +
+                "({:" + one + ", " + two + "}, " + weight + ")";
     }
 }

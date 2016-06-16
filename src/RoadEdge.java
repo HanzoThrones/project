@@ -34,4 +34,9 @@ public class RoadEdge extends MapEdge{
     public boolean equalsType(MapEdge other){
         return other instanceof RoadEdge;
     }
+    
+    @Override
+    public String toString(){
+        return "\tRoad Edge: ({" + one + ", " + two + "}, " + weight + ")";
+    }
 }
