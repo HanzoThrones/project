@@ -16,7 +16,7 @@ public abstract class TileVertex{
     private ArrayList<MapEdge> neighborhood;
     protected String label;
     protected int index;
-    private String control;
+    protected String control;
       
     public TileVertex(String label, int index, String control)
     {
@@ -148,4 +148,6 @@ public abstract class TileVertex{
     }
     
     abstract public boolean equalsType(TileVertex other);
+    
+    abstract public String saveString();
 }

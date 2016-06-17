@@ -23,4 +23,10 @@ public class PortTile extends TileVertex{
     public String toString(){
         return "Port Vertex #" + index + ": " + label;
     }
+    
+    @Override
+    public String saveString()
+    {
+        return "Port!" + label + "!" + ("" + index) + "!" + control;
+    }
 }

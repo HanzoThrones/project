@@ -1,3 +1,8 @@
+
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 /**
  *
  * @author Michael Levet
@@ -5,7 +10,7 @@
  */
 public class DemoGraph2 {
                    
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         
         final int ROAD = 1;
         final int RIVER = 2;
@@ -20,67 +25,10 @@ public class DemoGraph2 {
         int n = 0;
         
         //initialize some vertices and add them to the graph
-        TileVertex[] vertices = new TileVertex[SIZE];       
-        
-        vertices[n] = new SeaTile("Bay of Ice", n, "None"); n++;                // 0
-        vertices[n] = new LandTile("Castle Black", n, "None"); n++;             // 1
-        vertices[n] = new SeaTile("The Shivering Sea", n, "None"); n++;         // 2
-        vertices[n] = new LandTile("Winterfell", n, "Stark"); n++;              // 3
-        vertices[n] = new PortTile("Winterfell Port", n, "Stark"); n++;         // 4
-        vertices[n] = new LandTile("Karhold", n, "None"); n++;                  // 5
-        vertices[n] = new LandTile("The Stony Shore", n, "None"); n++;          // 6
-        vertices[n] = new LandTile("White Harbor", n, "None"); n++;             // 7
-        vertices[n] = new PortTile("White Harbor Port", n, "None"); n++;        // 8
-        vertices[n] = new LandTile("Widow's Watch", n, "None"); n++;            // 9
-        vertices[n] = new SeaTile("Sunset Sea", n, "None"); n++;                // 10
-        vertices[n] = new LandTile("Flint's Finger", n, "None"); n++;           // 11
-        vertices[n] = new LandTile("Greywater Watch", n, "None"); n++;          // 12
-        vertices[n] = new LandTile("Moat Calin", n, "None"); n++;               // 13
-        vertices[n] = new SeaTile("The Narrow Sea", n, "None"); n++;            // 14
-        vertices[n] = new SeaTile("Ironman's Bay", n, "None"); n++;             // 15
-        vertices[n] = new LandTile("Pyke", n, "Greyjoy"); n++;                  // 16
-        vertices[n] = new PortTile("Pyke Port", n, "Greyjoy"); n++;             // 17
-        vertices[n] = new LandTile("Seagard", n, "None"); n++;                  // 18
-        vertices[n] = new LandTile("The Twins", n, "None"); n++;                // 19
-        vertices[n] = new LandTile("The Fingers", n, "None"); n++;              // 20
-        vertices[n] = new LandTile("Riverrun", n, "None"); n++;                 // 21
-        vertices[n] = new LandTile("The Mountains of The Moon", n, "None"); n++;// 22
-        vertices[n] = new LandTile("The Eyrie", n, "None"); n++;                // 23
-        vertices[n] = new SeaTile("The Golden Sound", n, "None"); n++;          // 24
-        vertices[n] = new LandTile("Lannisport", n, "None"); n++;               // 25
-        vertices[n] = new PortTile("Lannisport Port", n, "None"); n++;          // 26
-        vertices[n] = new LandTile("Stoney Sept", n, "None"); n++;              // 27
-        vertices[n] = new LandTile("Harrenhal", n, "None"); n++;                // 28
-        vertices[n] = new LandTile("Cracklaw Point", n, "None"); n++;           // 29
-        vertices[n] = new SeaTile("Shipbreaker Bay", n, "None"); n++;           // 30
-        vertices[n] = new LandTile("SeaRoad Marches", n, "None"); n++;          // 31
-        vertices[n] = new LandTile("Blackwater", n, "None"); n++;               // 32
-        vertices[n] = new LandTile("King's Landing", n, "None"); n++;           // 33
-        vertices[n] = new SeaTile("Blackwater Bay", n, "None"); n++;            // 34
-        vertices[n] = new LandTile("Dragonstone", n, "Baratheon"); n++;         // 35
-        vertices[n] = new PortTile("Dragonstone Port", n, "Baratheon"); n++;    // 36
-        vertices[n] = new SeaTile("West Summer Sea", n, "None"); n++;           // 37
-        vertices[n] = new SeaTile("Redwyne Straights", n, "None"); n++;         // 38
-        vertices[n] = new LandTile("Highgarden", n, "Tyrell"); n++;              // 39
-        vertices[n] = new LandTile("The Reach", n, "None"); n++;                // 40
-        vertices[n] = new LandTile("Kingswood", n, "None"); n++;                // 41
-        vertices[n] = new LandTile("OldTown", n, "None"); n++;                  // 42
-        vertices[n] = new PortTile("OldTown Port", n, "None"); n++;             // 43
-        vertices[n] = new LandTile("Dornish Marches", n, "None"); n++;          // 44
-        vertices[n] = new LandTile("The Boneway", n, "None"); n++;              // 45
-        vertices[n] = new LandTile("Storms End", n, "None"); n++;               // 46
-        vertices[n] = new PortTile("Storms End Port", n, "None"); n++;          // 47
-        vertices[n] = new LandTile("Three Towers", n, "None"); n++;             // 48
-        vertices[n] = new LandTile("Prince's Pass", n, "None"); n++;            // 49
-        vertices[n] = new SeaTile("Sea of Dorne", n, "None"); n++;              // 50
-        vertices[n] = new LandTile("The Arbor", n, "None"); n++;                // 51
-        vertices[n] = new LandTile("Starfall", n, "None"); n++;                 // 52
-        vertices[n] = new LandTile("Yronwood", n, "None"); n++;                 // 53
-        vertices[n] = new LandTile("Sunspear", n, "Dorne"); n++;                // 54
-        vertices[n] = new PortTile("Sunspear Port", n, "Dorne"); n++;           // 55
-        vertices[n] = new LandTile("Salt Shore", n, "None"); n++;               // 56
-        vertices[n] = new SeaTile("East Summer Sea", n, "None");                // 57
-               
+        TileVertex[] vertices = new TileVertex[58];       
+              
+        loadVertexData(vertices);
+                
         for(int i = 0; i < SIZE; i++){
             graph.addVertex(vertices[i], true);
         }
@@ -295,4 +243,57 @@ public class DemoGraph2 {
             System.out.println();
         }
     }
+    
+    public static void loadVertexData(TileVertex[] tiles)
+        throws Exception {
+            
+        String line;
+        String data[];
+        int count = 0;
+            
+        File inFile = new File("VertexDataFile.txt");
+        try (Scanner input = new Scanner(inFile)) {
+            while (input.hasNext()) {
+                line = input.nextLine();
+                data = line.split("!");
+
+                switch(data[0]){
+                    
+                    case "Land":
+                        tiles[count] = new LandTile(data[1], 
+                                Integer.parseInt(data[2]), data[3],
+                                Integer.parseInt(data[4]), Integer.parseInt(data[5]), 
+                                Integer.parseInt(data[6]));
+                                break;
+                    case "Port":
+                        tiles[count] = new PortTile(data[1], 
+                                Integer.parseInt(data[2]), data[3]);
+                        break;
+                    case "Sea":
+                        tiles[count] = new SeaTile(data[1], 
+                                Integer.parseInt(data[2]), 
+                                data[3]);
+                }
+                System.out.println(tiles[count]);
+                count++;
+            }
+            System.out.print("\n");
+        }
+        }
+        
+        public static void saveVertexData(TileVertex[] tiles)
+        throws Exception{
+            
+            PrintWriter writer;
+            File outFile = new File("VertexDataFile.txt");
+
+            writer = new PrintWriter(outFile);
+            
+            for(TileVertex i : tiles)
+            {
+                System.out.println(i.saveString());
+                writer.println(i.saveString());            
+            }      
+            writer.close();
+        }
 }

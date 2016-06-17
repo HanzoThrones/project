@@ -1,0 +1,58 @@
+Sea!Bay of Ice!0!None
+Land!Castle Black!1!None!0!0!0
+Sea!The Shivering Sea!2!None
+Land!Winterfell!3!Stark!0!0!0
+Port!Winterfell Port!4!Stark
+Land!Karhold!5!None!0!0!0
+Land!The Stony Shore!6!None!0!0!0
+Land!White Harbor!7!None!0!0!0
+Port!White Harbor Port!8!None
+Land!Widow's Watch!9!None!0!0!0
+Sea!Sunset Sea!10!None
+Land!Flint's Finger!11!None!0!0!0
+Land!Greywater Watch!12!None!0!0!0
+Land!Moat Calin!13!None!0!0!0
+Sea!The Narrow Sea!14!None
+Sea!Ironman's Bay!15!None
+Land!Pyke!16!Greyjoy!0!0!0
+Port!Pyke Port!17!Greyjoy
+Land!Seagard!18!None!0!0!0
+Land!The Twins!19!None!0!0!0
+Land!The Fingers!20!None!0!0!0
+Land!Riverrun!21!None!0!0!0
+Land!The Mountains of The Moon!22!None!0!0!0
+Land!The Eyrie!23!None!0!0!0
+Sea!The Golden Sound!24!None
+Land!Lannisport!25!None!0!0!0
+Port!Lannisport Port!26!None
+Land!Stoney Sept!27!None!0!0!0
+Land!Harrenhal!28!None!0!0!0
+Land!Cracklaw Point!29!None!0!0!0
+Sea!Shipbreaker Bay!30!None
+Land!SeaRoad Marches!31!None!0!0!0
+Land!Blackwater!32!None!0!0!0
+Land!King's Landing!33!None!0!0!0
+Sea!Blackwater Bay!34!None
+Land!Dragonstone!35!Baratheon!0!0!0
+Port!Dragonstone Port!36!Baratheon
+Sea!West Summer Sea!37!None
+Sea!Redwyne Straights!38!None
+Land!Highgarden!39!Tyrell!0!0!0
+Land!The Reach!40!None!0!0!0
+Land!Kingswood!41!None!0!0!0
+Land!OldTown!42!None!0!0!0
+Port!OldTown Port!43!None
+Land!Dornish Marches!44!None!0!0!0
+Land!The Boneway!45!None!0!0!0
+Land!Storms End!46!None!0!0!0
+Port!Storms End Port!47!None
+Land!Three Towers!48!None!0!0!0
+Land!Prince's Pass!49!None!0!0!0
+Sea!Sea of Dorne!50!None
+Land!The Arbor!51!None!0!0!0
+Land!Starfall!52!None!0!0!0
+Land!Yronwood!53!None!0!0!0
+Land!Sunspear!54!Dorne!0!0!0
+Port!Sunspear Port!55!Dorne
+Land!Salt Shore!56!None!0!0!0
+Sea!East Summer Sea!57!None

@@ -23,4 +23,10 @@ public class SeaTile extends TileVertex{
     public String toString(){
         return "Sea Vertex #" + index + ": " + label;
     }
+    
+    @Override
+    public String saveString()
+    {
+        return "Sea!" + label + "!" + ("" + index) + "!" + control;
+    }
 }

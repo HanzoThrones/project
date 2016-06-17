@@ -23,7 +23,7 @@ public class LandTile extends TileVertex {
     }
     
     public LandTile(String label, int index, String control, int building,
-                    String houseControl, int crowns, int supply)
+                    int crowns, int supply)
     {
         super(label, index, control);
         this.building = building;
@@ -68,5 +68,12 @@ public class LandTile extends TileVertex {
     @Override
     public String toString(){
         return "Land Vertex #" + index + ": " + label;
+    }
+    
+    @Override
+    public String saveString()
+    {
+        return "Land!" + label + "!" + ("" + index) + "!" + control + "!" + 
+                ("" + building) + "!" + ("" + crowns) + "!" + ("" + supply);
     }
 }
